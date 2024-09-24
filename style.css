@@ -1,0 +1,170 @@
+body {
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  overflow: hidden;
+}
+
+.navbar-custom {
+  background-color: rgb(251, 255, 0);
+  color: #000;
+}
+
+.nav-link {
+  font-family: "Permanent Marker", cursive, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: larger;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: rgb(255, 0, 0);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.OrderNow {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.biryani_img {
+  width: 450px;
+  height: 450px;
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.descriptionn {
+  height: 500px;
+  opacity: 0;
+  animation: slideIn 2s forwards 1.5s;
+}
+
+.biryanidescription {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 2s forwards 0.5s;
+}
+
+.smoke {
+  position: absolute;
+  top: -50px;
+  left: 26%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: url('images/smoke.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.7;
+  animation: smokeEffect 5s infinite;
+  z-index: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes smokeEffect {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -20px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .biryani_img {
+    width: 100%;
+    height: auto;
+  }
+  .descriptionn {
+    height: auto;
+  }
+  .biryanidescription {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.ordernowpic {
+  height: 450px;
+}
+
+.RiderPic {
+  height: 450px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  animation: rideIn 1s forwards 1s;
+  transform: scaleX(-1)
+}
+
+@keyframes rideIn {
+  from {
+    transform: translateX(100%) rotate(-10deg) scaleX(-1);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(-10deg) scaleX(-1);
+    opacity: 1;
+  }
+}
+.biryanimenu{
+  text-align: center;
+  margin-top: 95px;
+}
+.BiryaniName{
+  color: #fbff00;
+}
+.locationpic{
+  height: 500px;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+.contactbutton{
+  position: fixed;
+            bottom: 0;
+            right: 0;
+            height: 50px;
+            transition: transform 0.3s ease-in-out;
+}
+.contactbutton:hover{
+  transform: translate(-10px, -10px);
+}
